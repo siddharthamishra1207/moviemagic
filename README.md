@@ -1,79 +1,195 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+🎮 MovieMagic - A Movie Matchmaking System
 
-# Getting Started
+MovieMagic is a cross-platform movie recommendation app built using React Native. It uses a custom machine learning model and APIs to provide personalized movie suggestions, detailed film data, and an interactive chat experience. Designed for both Android and iOS, it aims to revolutionize how users discover and explore movies.
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+📱 Features
 
-## Step 1: Start the Metro Server
+🔐 Firebase Authentication (Signup/Login)
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+🏠 Home screen with Trending, Upcoming & Top-Rated Movies (via TMDB)
 
-To start Metro, run the following command from the _root_ of your React Native project:
+🔍 Search bar for quick movie lookup
 
-```bash
-# using npm
+🤖 Chatbot powered by OpenAI GPT API for movie-related queries
+
+🎥 Detailed Movie Pages with:
+
+Synopsis
+
+Genre, Runtime, Release Year
+
+Cast Info from TMDB API
+
+Similar movie suggestions (via ML model)
+
+👨‍🎤 Actor Detail Screen
+
+💡 Real-time Recommendations using a Content-Based Filtering ML model
+
+🧠 Machine Learning Model
+
+Built with scikit-learn
+
+Uses a Bag-of-Words (BoW) approach
+
+Calculates Cosine Similarity between movie vectors
+
+Trained on a dataset of 5000+ movies
+
+Deployed using Flask API
+
+⚙️ Tech Stack
+
+Layer
+
+Technology
+
+Frontend
+
+React Native
+
+Backend API
+
+Flask
+
+Auth
+
+Firebase
+
+ML Libraries
+
+scikit-learn, Pandas, NumPy
+
+Movie Data
+
+TMDB API
+
+Chatbot
+
+OpenAI GPT API
+
+IDEs
+
+VS Code, Android Studio, Xcode
+
+🏗️ Architecture
+
+graph TD
+  A[React Native App] -->|User Auth| B[Firebase]
+  A -->|API Calls| C[Flask Backend]
+  C -->|Serve Recommendations| D[ML Model]
+  A -->|Movie Info| E[TMDB API]
+  A -->|Chat Query| F[OpenAI GPT API]
+
+📂 Folder Structure (Client)
+
+MovieMagic/
+│
+├── assets/                # Images & Icons
+├── components/            # Reusable UI components
+├── navigation/            # Navigation stack
+├── screens/               # Login, Signup, Home, Detail screens
+├── api/                   # TMDB fetch methods
+├── config/                # Firebase config
+├── theme/                 # App theme & styling
+├── App.js                 # Entry Point
+└── ...
+
+🚀 Getting Started
+
+Prerequisites
+
+Node.js
+
+Expo CLI / React Native CLI
+
+Python 3.x
+
+Android Studio / Xcode (for testing)
+
+Firebase project
+
+TMDB API key
+
+OpenAI API key
+
+Setup Instructions
+
+1. Clone the Repo
+
+git clone https://github.com/your-username/moviemagic.git
+cd moviemagic
+
+2. Setup Firebase
+
+Create a Firebase project
+
+Enable Authentication (Email/Password)
+
+Add your Firebase config to /config/firebase.js
+
+3. Setup TMDB API
+
+Sign up at TMDB
+
+Generate an API Key
+
+Add it to your environment or directly in api/moviedb.js
+
+4. Setup Flask Backend (ML Model)
+
+cd backend
+pip install -r requirements.txt
+python app.py  # Runs the Flask API server
+
+5. Start the React Native App
+
+npm install
 npm start
 
-# OR using Yarn
-yarn start
-```
+Use a physical device/emulator with Expo Go or Android/iOS simulator.
 
-## Step 2: Start your Application
+🧪 Testing & Deployment
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+✅ Tested on Android 7+ and iOS 11+
 
-### For Android
+✅ Firebase ensures secure auth
 
-```bash
-# using npm
-npm run android
+✅ OpenAI GPT integrated for smart queries
 
-# OR using Yarn
-yarn android
-```
+✅ Flask serves accurate movie recommendations
 
-### For iOS
+🎯 Future Scope
 
-```bash
-# using npm
-npm run ios
+Add collaborative filtering to improve diversity
 
-# OR using Yarn
-yarn ios
-```
+Use vector DB for faster ML responses
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+Integrate streaming service availability (e.g., Netflix, Prime)
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+Add ratings & watchlist features
 
-## Step 3: Modifying your App
+📚 Academic Info
 
-Now that you have successfully run the app, let's modify it.
+📕 Title: MovieMagic – A Movie Matchmaking System
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+🏫 College: Shri Ramswaroop Memorial College of Engineering and Management, Lucknow
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
+👨‍🎓 By: Siddhartha Mishra & Sujal Varshney
 
-## Congratulations! :tada:
+👩‍🏫 Guide: Dr. Vibha Srivastava
 
-You've successfully run and modified your React Native App. :partying_face:
+🗓️ Year: 2024
 
-### Now what?
+📜 License
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
+This project is for educational and academic purposes only.
 
-# Troubleshooting
+🔗 Links
 
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+📄 Research Paper (IRJMETS)
 
-# Learn More
+🧠 OpenAI GPT
 
-To learn more about React Native, take a look at the following resources:
+🎥 TMDB API
 
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
